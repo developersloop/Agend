@@ -9,14 +9,12 @@ const Contact = mongoose.model('Contact')
 module.exports = {
             //
             async register(req,res){
-                  const { name,lastname,idade,email,password } = req.body;
+                  const { password } = req.body;
+                  let obj = req.body;
                   let pass = await bcrypt.hash(password,10);
 
                   const registers = await User.create({
-                        name,
-                        lastname,
-                        idade,
-                        email,
+                        ...obj,
                         password:pass       
                   })
                   // guard token in locastorage

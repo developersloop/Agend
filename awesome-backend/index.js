@@ -6,10 +6,10 @@ const app = express();
 require("dotenv/config");
 requireDir('./src/models');
 
+app.use(cors());
 
 app.use(express.json());
 app.use('/api',require('./src/routes'))
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
