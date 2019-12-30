@@ -1,6 +1,6 @@
 import React from 'react';
-
-export const Table = (props) => 
-<table>
+import { Table } from 'react-bootstrap';
+export const Tablee = (props) => 
+<Table striped bordered hover>
     {props.children}
-</table>
+</Table>

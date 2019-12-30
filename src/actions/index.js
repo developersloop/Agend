@@ -35,6 +35,8 @@ async function Login(email,password){
                email,
                password,
         }
+
+        console.log(data);
        const response = await axios.post(BASE_URL,data,{
             headers: {
                 'Content-Type': 'application/json',

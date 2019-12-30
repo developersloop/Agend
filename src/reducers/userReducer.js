@@ -1,7 +1,13 @@
 import { ACTION_REGISTER, BASE_URL }  from '../actions/actionsCreators';
 import axios from 'axios';
 const initialState = {
-       user:[]
+       user:[
+        //    {
+        //        id:1,
+        //        name:'vitor vicente',
+        //        email:'vi_dualcore@hotmail.com'
+        //    }
+       ]
 }
 
 export const userReducer = (state = initialState,action) => {
@@ -17,7 +23,7 @@ export const userReducer = (state = initialState,action) => {
          break;
      
          default:
-          return state;
+            return state;
          break;
      }
 }

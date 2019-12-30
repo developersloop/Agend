@@ -1,11 +1,11 @@
+import { validatePayloadLogin } from '../src/validations/userValidation';
+import { verifyJWT } from '../src/middlewares/index';
 const express = require('express');
 const routes = express.Router();
 const  UserController  = require('./Controllers/UserController');
 const ContactController = require('./Controllers/ContactController');
-import { validatePayloadLogin } from '../src/validations/userValidation';
-import { verifyJWT } from '../src/middlewares/index';
 
-routes.get('/users',verifyJWT,UserController.index);
+routes.get('/users',UserController.index);
 routes.get('/users/:id',verifyJWT,UserController.show);
 
 routes.get('/contatos',verifyJWT,ContactController.index);
