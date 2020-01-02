@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 import { loginReducer } from './loginReducer';
+import { contatoReducer } from './contatoReducer';
 import { userReducer } from './userReducer';
 
 
 export const Reducers = combineReducers({
        Login: loginReducer,
-       user: userReducer
+       contatos: contatoReducer,
+       users:userReducer
 })

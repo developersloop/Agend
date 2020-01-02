@@ -8,10 +8,10 @@ const ContactController = require('./Controllers/ContactController');
 routes.get('/users',UserController.index);
 routes.get('/users/:id',verifyJWT,UserController.show);
 
-routes.get('/contatos',verifyJWT,ContactController.index);
-routes.get('/contatos/:id',verifyJWT,ContactController.show);
-routes.get('/contatos/user/:id',verifyJWT,ContactController.userByContact);
-routes.post('/contatos',verifyJWT,ContactController.store);
+routes.get('/contatos',ContactController.index);
+routes.get('/contatos/:id',ContactController.show);
+routes.get('/contatos/user/:id',ContactController.userByContact);
+routes.post('/contatos',ContactController.store);
 
 
 // register user

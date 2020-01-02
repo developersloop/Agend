@@ -1,0 +1,14 @@
+.container{
+    margin-top:140px;
+    
+}
+
+.recipient{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+}
+
+.top{
+     margin-top:40px;
+}

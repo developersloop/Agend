@@ -28,14 +28,7 @@ class Login extends Component{
         })
       }
 
-      async componentDidMount(){
-          const response = await Axios.get('http://localhost:3001/api/users',{
-               headers:{
-                    'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDYyNjk4NTE1Y2JhNWQ0NzFkYjVmMyIsImlhdCI6MTU3NzcwNDE3OSwiZXhwIjoxNTc3NzA0NDc5fQ.BcLQgAwHUjPdggRYSfMFqn8Lu89CTakP-kOhIrzN98Y'
-               }
-          });
-          localStorage.setItem('user',JSON.stringify(response.data[0]))
-      }
+      
 
          render(){
                const {user,submitLogin } = this.props;
@@ -72,36 +65,13 @@ class Login extends Component{
                     </Formulario>
                  </Col>
                </Row>    
-                <table>
-                    <thead>
-                        <tr>
-                            <td>id</td>
-                            <td>name</td>
-                            <td>email</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                           user.map((value,index) => {
-                               return <tr>
-                                        <td>{value.id}</td>
-                                        <td>{value.name}</td>
-                                        <td>{value.email}</td>
-                               </tr>
-                           })
-                        }
-                    </tbody>
-                </table>
                </div>
              );
        }
 }
 
-const mapStateToProps = store => ({
-  user : store.user.user
-})
 
 const mapDispatchToProps = dispatch => 
   bindActionCreators({submitLogin},dispatch)
 
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default connect(null,mapDispatchToProps)(Login);
